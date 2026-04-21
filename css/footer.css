@@ -1,0 +1,218 @@
+/* ===========================
+   FOOTER.CSS — Footer
+   =========================== */
+
+.footer {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer__canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.footer__inner {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px 40px;
+}
+
+/* ---- TOP ROW ---- */
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logo & tagline */
+.footer__logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  border: 2px solid var(--white);
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.footer__tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.footer__availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--gray-mid);
+}
+
+.footer__avail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46,204,113,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(46,204,113,0); }
+}
+
+/* Newsletter */
+.footer__newsletter {
+  padding-top: 24px;
+}
+
+.footer__newsletter p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--gray-mid);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer__form {
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.footer__form:focus-within {
+  border-color: var(--orange);
+}
+
+.footer__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 14px 20px;
+  outline: none;
+  letter-spacing: 0.05em;
+}
+
+.footer__input::placeholder { color: rgba(255,255,255,0.25); }
+
+.footer__submit {
+  background: var(--orange);
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  width: 52px;
+  cursor: none;
+  transition: background 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer__submit:hover {
+  background: var(--orange-hover);
+  transform: translateX(3px);
+}
+
+/* ---- MID ROW ---- */
+.footer__mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer__nav a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gray-mid);
+  text-transform: uppercase;
+  transition: color 0.3s;
+  cursor: none;
+}
+
+.footer__nav a:hover { color: var(--white); }
+
+.footer__contact a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  cursor: none;
+}
+
+.footer__contact a:hover { color: var(--orange); }
+
+/* ---- BOTTOM ROW ---- */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__copy {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer__shortcuts {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__shortcuts span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+@media (max-width: 800px) {
+  .footer__inner { padding: 60px 24px 32px; }
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

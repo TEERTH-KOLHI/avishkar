@@ -1,0 +1,216 @@
+/* ===========================
+   PRICING.CSS — Plans
+   =========================== */
+
+.pricing {
+  background: var(--black);
+  padding: 100px 48px;
+}
+
+.pricing__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 72px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pricing__header h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.pricing__tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* Cards container */
+.pricing__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  max-width: 900px;
+}
+
+/* Card shared */
+.pricing__card {
+  padding: 56px 48px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.pricing__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+/* Light plan */
+.pricing__card--light {
+  background: var(--off-white);
+  color: var(--black);
+}
+
+/* Dark plan */
+.pricing__card--dark {
+  background: var(--dark);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Card header */
+.pricing__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.pricing__plan-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.pricing__card--light .pricing__plan-name { color: var(--black); }
+.pricing__card--dark .pricing__plan-name { color: var(--white); }
+
+.pricing__pill {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--orange);
+  color: var(--white);
+}
+
+.pricing__pill--dark {
+  background: rgba(255,255,255,0.1);
+  color: var(--gray-mid);
+}
+
+/* Price display */
+.pricing__price {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+
+.pricing__currency {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 12px;
+  opacity: 0.6;
+}
+
+.pricing__card--dark .pricing__currency { color: var(--white); }
+
+.pricing__amount {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.pricing__card--light .pricing__amount { color: var(--black); }
+.pricing__card--dark .pricing__amount { color: var(--white); }
+
+.pricing__period {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  align-self: flex-end;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* Feature list */
+.pricing__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.pricing__features li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.pricing__card--light .pricing__features li { color: var(--gray-dark); }
+.pricing__card--dark .pricing__features li { color: rgba(255,255,255,0.7); }
+
+.pricing__check {
+  color: var(--orange);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+
+/* CTA */
+.pricing__btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 16px;
+}
+
+/* Note below */
+.pricing__note {
+  margin-top: 40px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray-mid);
+  letter-spacing: 0.05em;
+}
+
+.pricing__note a {
+  color: var(--orange);
+  transition: opacity 0.3s;
+}
+
+.pricing__note a:hover { opacity: 0.7; }
+
+/* Decorative line */
+.pricing__card--light::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+}
+
+@media (max-width: 700px) {
+  .pricing {
+    padding: 60px 24px;
+  }
+
+  .pricing__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing__card {
+    padding: 40px 28px;
+  }
+}
