@@ -134,7 +134,9 @@
 .nav__overlay {
   position: fixed;
   inset: 0;
-  background: var(--black);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -176,17 +178,17 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
   margin-bottom: 60px;
 }
 
 .nav__overlay-links li a {
   font-family: var(--font-sans);
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
   color: var(--white);
-  letter-spacing: -0.02em;
-  line-height: 1;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
   text-decoration: none;
   cursor: none;
   display: inline-block;
