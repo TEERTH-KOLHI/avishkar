@@ -3,6 +3,37 @@
    =========================== */
 
 (function () {
+  // ---- Lenis Smooth Scroll ----
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Ensure links with hashes use Lenis to scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          lenis.scrollTo(target, { offset: -80 }); // Offset for the fixed navbar
+        }
+      });
+    });
+  }
+
   // ---- Hero headline line-by-line reveal ----
   const lines = document.querySelectorAll('.hero__line');
   lines.forEach(line => {
