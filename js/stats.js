@@ -29,17 +29,17 @@
     if (triggered) return;
     triggered = true;
 
-    // Stat 1: $50B+
+    // Stat 1: 89% FCR
     const s1 = document.getElementById('stat1');
-    if (s1) animateCounter(s1, 50, '$', 'B+', 2000);
+    if (s1) animateCounter(s1, 89, '', '%', 2000);
 
-    // Stat 2: 10M+
+    // Stat 2: 85% inspection time reduction
     const s2 = document.getElementById('stat2');
-    if (s2) animateCounter(s2, 10, '', 'M+', 2000);
+    if (s2) animateCounter(s2, 85, '', '%', 2200);
 
-    // Stat 3: 50+
+    // Stat 3: 3x handle time reduction
     const s3 = document.getElementById('stat3');
-    if (s3) animateCounter(s3, 50, '', '+', 1800);
+    if (s3) animateCounter(s3, 3, '', 'x', 1500);
   }
 
   // Use IntersectionObserver on the stats section
