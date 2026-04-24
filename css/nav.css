@@ -15,7 +15,8 @@
   z-index: 1000;
   transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
   border-bottom: 1px solid transparent;
-  border-radius: 12px;
+  background: #2d2d2d;
+  border-radius: 0;
 }
 
 .nav.scrolled {
