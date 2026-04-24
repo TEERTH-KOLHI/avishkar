@@ -24,6 +24,10 @@
   border-color: rgba(255, 255, 255, 0.07);
 }
 
+body.menu-open .nav {
+  background: #333333 !important;
+}
+
 /* Logo */
 .nav__logo {
   font-family: var(--font-mono);
@@ -128,22 +132,26 @@ body.menu-open .nav__hamburger {
 /* Full-screen overlay */
 .nav__overlay {
   position: fixed;
-  top: calc(20px + var(--nav-h) + 15px);
+  top: calc(20px + var(--nav-h) + 8px);
   left: 20px;
   right: 20px;
-  bottom: 20px; /* Also added bottom gap to make it a floating container */
+  bottom: 20px;
   background: #333333;
   z-index: 999;
   display: flex;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
 }
 
 .nav__overlay.open {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .nav__overlay-container {
