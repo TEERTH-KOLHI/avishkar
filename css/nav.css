@@ -4,17 +4,19 @@
 
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  z-index: 1000;
-  transition: background 0.4s ease, border-color 0.4s ease;
+  z-index: 1002;
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+  background: transparent;
   border-bottom: 1px solid transparent;
+  border-radius: 12px;
 }
 
 .nav.scrolled {
@@ -22,6 +24,14 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-color: rgba(255, 255, 255, 0.07);
+}
+
+body.menu-open .nav {
+  background: transparent !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
 }
 
 /* Logo */
