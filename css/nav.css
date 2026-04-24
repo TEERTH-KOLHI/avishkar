@@ -228,6 +228,7 @@ body.menu-open .nav__hamburger {
   display: flex;
   align-items: center;
   position: relative;
+  margin-left: 10px; /* Increased to 10px space from the marker */
 }
 
 .nav__overlay-links li a {
