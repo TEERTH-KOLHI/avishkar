@@ -12,18 +12,21 @@
 
 .footer__watermark {
   position: absolute;
-  bottom: -40px;
+  bottom: -100px; /* Moved down further */
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-sans);
-  font-size: clamp(10rem, 25vw, 35rem);
+  font-size: clamp(8rem, 20vw, 25rem); /* Reduced size */
   font-weight: 700;
   color: rgba(255, 255, 255, 0.04);
   letter-spacing: -0.05em;
   pointer-events: none;
   z-index: 1;
-  text-transform: capitalize;
   white-space: nowrap;
+}
+
+.footer__watermark i {
+  font-style: italic;
 }
 
 .footer__canvas {
