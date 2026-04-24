@@ -4,14 +4,15 @@
 
 .why {
   background: var(--off-white);
-  padding: 120px 48px;
+  padding: 120px 20px; /* Aligns with nav left: 20px; right: 20px; */
 }
 
 .why__container {
-  max-width: 1600px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   display: grid;
-  grid-template-columns: 350px 1fr;
+  grid-template-columns: 380px 1fr;
   gap: 60px;
   align-items: center;
 }

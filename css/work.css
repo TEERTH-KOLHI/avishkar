@@ -4,7 +4,7 @@
 
 .work {
   background: var(--black);
-  padding: 100px 0 100px 48px;
+  padding: 100px 0 100px 20px;
   min-height: 100vh;
   display: flex;
   align-items: center;

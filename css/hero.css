@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: calc(var(--nav-h) + 60px) 48px 80px;
+  padding: calc(var(--nav-h) + 60px) 20px 80px;
   position: sticky;
   top: 0;
   z-index: 1;
