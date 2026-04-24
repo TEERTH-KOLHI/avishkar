@@ -130,17 +130,17 @@
   const navLinksList = document.querySelector('.nav__overlay-links');
   const navItems = navLinksList ? navLinksList.querySelectorAll('li') : [];
 
-  function moveMarker(el) {
+  function moveMarker(el, isHover = false) {
     if (!floatingMarker || !el) return;
-    const itemRect = el.getBoundingClientRect();
-    const listRect = navLinksList.getBoundingClientRect();
     const top = el.offsetTop + (el.offsetHeight / 2) - (floatingMarker.offsetHeight / 2);
-    floatingMarker.style.transform = `translateY(${top}px)`;
+    const xOffset = isHover ? 12 : 0; // Slide right 12px on hover
+    floatingMarker.style.transform = `translate(${xOffset}px, ${top}px)`;
     floatingMarker.style.opacity = '1';
   }
 
   navItems.forEach(item => {
-    item.addEventListener('mouseenter', () => moveMarker(item));
+    item.addEventListener('mouseenter', () => moveMarker(item, true));
+    item.addEventListener('mouseleave', () => moveMarker(item, false));
   });
 
   // Reset to first item when menu opens
@@ -148,7 +148,7 @@
   openMenu = function() {
     originalOpenMenu();
     if (navItems.length > 0) {
-      setTimeout(() => moveMarker(navItems[0]), 100);
+      setTimeout(() => moveMarker(navItems[0], false), 100);
     }
   };
 

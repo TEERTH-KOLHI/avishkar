@@ -238,18 +238,20 @@ body.menu-open .nav__hamburger {
   line-height: 1.1;
   text-decoration: none;
   cursor: none;
-  transition: color 0.3s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+  display: block;
 }
 
-/* Hover effect for both marker and text */
-.nav__overlay-links li:hover .nav__link-marker,
-.nav__overlay-links li:first-child .nav__link-marker {
-  background: var(--orange); /* Red-Orange theme color */
-}
-
-.nav__overlay-links li:hover a,
-.nav__overlay-links li:first-child a {
+/* Horizontal slide on hover */
+.nav__overlay-links li:hover a {
   color: var(--orange);
+  transform: translateX(12px); /* Text slides right */
+}
+
+/* Move marker right along with text */
+.nav__overlay-links li:hover ~ .nav__floating-marker,
+.nav__floating-marker.hovered {
+  transform: translate(12px, var(--marker-y, 0)); 
 }
 
 /* Contact Column */
