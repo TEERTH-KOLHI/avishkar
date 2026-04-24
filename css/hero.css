@@ -9,7 +9,9 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: calc(var(--nav-h) + 60px) 48px 80px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   overflow: hidden;
 }
 

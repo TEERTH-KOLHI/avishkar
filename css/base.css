@@ -155,3 +155,9 @@ body:hover .cursor { opacity: 1; }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
+
+/* ---- Section Stacking (Overlap Hero) ---- */
+section:not(.hero), .footer {
+  position: relative;
+  z-index: 2;
+}

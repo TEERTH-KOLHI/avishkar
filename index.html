@@ -45,19 +45,56 @@
 
     <!-- Full-screen menu overlay -->
     <div class="nav__overlay" id="navOverlay">
-      <div class="nav__overlay-inner">
-        <button class="nav__close" id="navClose">✕ CLOSE</button>
-        <ul class="nav__overlay-links">
-          <li><a href="#capabilities" data-index="01">CAPABILITIES</a></li>
-          <li><a href="#industries" data-index="02">INDUSTRIES</a></li>
-          <li><a href="#casestudies" data-index="03">CASE STUDIES</a></li>
-          <li><a href="#process" data-index="04">PROCESS</a></li>
-          <li><a href="#faq" data-index="05">FAQ</a></li>
-        </ul>
-        <div class="nav__overlay-contact">
-          <p>hello@avishkar.ai</p>
-          <p>Book a Demo →</p>
+      <!-- Overlay Header -->
+      <div class="nav__overlay-header">
+        <div class="nav__logo" style="display:flex;align-items:center;gap:10px;border:none;padding:0;cursor:pointer;">
+          <img src="assets/avishkar-ai-logo.png" alt="Avishkar AI" style="height:38px;width:auto;display:block;" />
         </div>
+        <button class="nav__close" id="navClose">CLOSE ✕</button>
+        <a href="#contact" class="nav__cta">
+          LET'S WORK TOGETHER <span class="nav__cta-plus">+</span>
+        </a>
+      </div>
+
+      <div class="nav__overlay-inner">
+        
+        <!-- Left Column -->
+        <ul class="nav__overlay-links">
+          <li><a href="#hero" class="active"><span class="active-square"></span>Home</a></li>
+          <li><a href="#casestudies"><span class="active-square"></span>Work</a></li>
+          <li><a href="#why"><span class="active-square"></span>Pricing</a></li>
+          <li><a href="#capabilities"><span class="active-square"></span>About</a></li>
+          <li><a href="#contact"><span class="active-square"></span>Contact</a></li>
+        </ul>
+
+        <!-- Middle Column -->
+        <div class="nav__overlay-contact-col">
+          <h4 class="overlay-section-title">CONTACT</h4>
+          <p>hello@avishkar.ai</p>
+          <br>
+          <p>Sales: sales@avishkar.ai</p>
+          <p>Support: support@avishkar.ai</p>
+          <br>
+          <p>LinkedIn: @avishkar-ai</p>
+          <p>Twitter: @avishkar_ai</p>
+          
+          <h4 class="overlay-section-title" style="margin-top: 40px;">WORKING GLOBALLY</h4>
+          <p class="overlay-list-item"><span class="active-square small"></span> ACCEPTING PROJECTS.<br>&nbsp;&nbsp;&nbsp;&nbsp;BOOK A DEMO.</p>
+          <p class="overlay-list-item" style="margin-top: 10px;"><span class="active-square small"></span> ONLY 5 PILOT SPOTS LEFT</p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="nav__overlay-media">
+          <div class="nav__media-item">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80" alt="About Avishkar AI">
+            <p>ABOUT AVISHKAR AI</p>
+          </div>
+          <div class="nav__media-item">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&q=80" alt="Featured Deployment">
+            <p>FEATURED DEPLOYMENT</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </nav>

@@ -26,13 +26,13 @@
     menuBtn.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Stagger in links
-    const items = navOverlay.querySelectorAll('.nav__overlay-links li');
+    // Stagger in content
+    const items = navOverlay.querySelectorAll('.nav__overlay-links li, .nav__overlay-contact-col > *, .nav__media-item');
     items.forEach((el, i) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       setTimeout(() => {
-        el.style.transition = `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s`;
+        el.style.transition = `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.05}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.05}s`;
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
       }, 50);
