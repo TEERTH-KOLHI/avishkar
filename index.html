@@ -519,51 +519,75 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer" id="contact">
+    <div class="footer__watermark">AVISHKAR</div>
     <canvas class="footer__canvas" id="footerCanvas"></canvas>
+    
     <div class="footer__inner">
-      <div class="footer__top">
+      <div class="footer__grid">
+        <!-- Col 1: Newsletter -->
         <div class="footer__left">
-          <div class="footer__logo" style="display:flex;align-items:center;gap:10px;">
-            <img src="assets/avishkar-ai-logo.png" alt="Avishkar AI" style="height:44px;width:auto;display:block;" />
-            <span
-              style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.08em;color:#fff;">AVISHKAR
-              AI</span>
-          </div>
-          <p class="footer__tagline">Enterprise AI for voice,<br>vision, and autonomous operations.</p>
-          <div class="footer__availability">
-            <span class="footer__avail-dot"></span>
-            Accepting new engagements
+          <p class="footer__newsletter-title">Don't miss out on future updates.</p>
+          <form class="footer__form">
+            <input type="text" placeholder="Name" class="footer__input">
+            <input type="email" placeholder="Email" class="footer__input">
+            <div class="footer__subscribe-bar">
+              <span>SUBSCRIBE</span>
+              <div class="bar-plus">+</div>
+            </div>
+          </form>
+          <p class="footer__unsubscribe">Unsubscribe anytime.</p>
+          
+          <div class="footer__status">
+            <div class="footer__status-item">
+              <span class="footer__status-dot"></span>
+              ACCEPTING PROJECTS. JOIN THE WAITLIST.
+            </div>
+            <div class="footer__status-item">
+              <span class="footer__status-dot"></span>
+              ONLY 3 SPOTS LEFT
+            </div>
           </div>
         </div>
+
+        <!-- Col 2: Nav -->
+        <div class="footer__center">
+          <nav class="footer__nav">
+            <a href="#hero">HOME</a>
+            <a href="#casestudies">WORK</a>
+            <a href="#why">PRICING</a>
+            <a href="#capabilities">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contact -->
         <div class="footer__right">
-          <div class="footer__newsletter">
-            <p>Let's design your AI workflow. Tell us what you're trying to improve.</p>
-            <form class="footer__form" id="footerForm">
-              <input type="email" placeholder="your@company.com" class="footer__input" required />
-              <button type="submit" class="footer__submit">→</button>
-            </form>
+          <div class="footer__emails">
+            <a href="mailto:ops@avishkar.ai">ops@avishkar.ai</a>
+            <a href="mailto:hello@avishkar.ai">hello@avishkar.ai</a>
+            <a href="mailto:engineering@avishkar.ai">engineering@avishkar.ai</a>
+          </div>
+
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Legal Notice</a>
+          </div>
+
+          <div class="footer__shortcuts">
+            <div class="footer__shortcut">
+              <span>⌘G</span> grid
+            </div>
+            <div class="footer__shortcut">
+              <span>C</span> change color
+            </div>
           </div>
         </div>
       </div>
-      <div class="footer__mid">
-        <nav class="footer__nav">
-          <a href="#capabilities">Capabilities</a>
-          <a href="#casestudies">Case Studies</a>
-          <a href="#why">Why Us</a>
-          <a href="#process">Process</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <div class="footer__contact">
-          <a href="mailto:hello@avishkar.ai">hello@avishkar.ai</a>
-        </div>
-      </div>
+
       <div class="footer__bottom">
-        <p class="footer__copy">© <span id="footerYear"></span> Avishkar AI. The flagship brand of Anjaneya AI
-          Technologies Pvt Ltd. All rights reserved.</p>
-        <div class="footer__shortcuts">
-          <span>LinkedIn</span>
-          <span>Privacy Policy</span>
-        </div>
+        <p>© 2026</p>
+        <p>Avishkar AI Operations Pvt Ltd.</p>
+        <p>Let's build the future of your operations.</p>
       </div>
     </div>
   </footer>
