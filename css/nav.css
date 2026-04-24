@@ -84,50 +84,38 @@
 /* CTA button */
 .nav__cta {
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: stretch;
+  background: var(--orange);
+  color: var(--white);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: none;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.nav__cta span:first-child,
-.nav__cta > span:not(.nav__cta-plus) {
-  background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s;
+.nav__cta:hover {
+  background: var(--orange-hover);
+  transform: translateY(-2px);
+}
+
+.nav__cta-text {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
 }
 
 .nav__cta-plus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--orange);
-  color: var(--white);
-  font-size: 1.2rem;
+  padding: 0 12px;
+  font-size: 1.1rem;
+  font-weight: 400;
   border-left: 1px solid rgba(255,255,255,0.2);
-  transition: background 0.3s;
-  margin-left: 1px;
-}
-
-.nav__cta {
-  background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s, transform 0.3s;
-  gap: 1px;
-}
-
-.nav__cta:hover {
-  background: var(--orange-hover);
-  transform: translateY(-2px);
 }
 
 /* Full-screen overlay */
