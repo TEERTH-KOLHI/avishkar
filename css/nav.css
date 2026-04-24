@@ -150,7 +150,7 @@ body.menu-open .nav__hamburger {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 40px 40px;
   display: grid;
   grid-template-columns: 1.5fr 1fr 2fr;
   gap: 60px;
@@ -198,7 +198,7 @@ body.menu-open .nav__hamburger {
 
 .nav__overlay-links li a {
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
   font-weight: 500;
   color: var(--white);
   line-height: 1.1;
@@ -266,9 +266,8 @@ body.menu-open .nav__hamburger {
 
 .nav__media-item img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 9/16;
   object-fit: cover;
-  filter: grayscale(20%);
 }
 
 .nav__media-item p {
