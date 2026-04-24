@@ -72,14 +72,14 @@
 .footer__form {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 10px; /* Standardized equal gaps */
   max-width: 380px;
   margin-bottom: 16px;
 }
 
 .footer__input {
   background: #1a1a1a;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Added subtle border */
   padding: 18px 20px;
   color: var(--white);
   font-family: var(--font-sans);
@@ -91,29 +91,35 @@
 
 .footer__subscribe-bar {
   display: flex;
-  background: var(--off-white);
-  color: var(--black);
-  margin-top: 10px;
+  gap: 10px; /* Matching horizontal gap */
+  margin-top: 4px; /* Adjusting for uniform vertical rhythm */
   align-items: stretch;
+}
+
+.footer__subscribe-btn {
+  flex: 1;
+  background: #b8b8b8;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borders as requested */
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
   cursor: none;
 }
 
-.footer__subscribe-bar span {
-  flex: 1;
-  padding: 14px;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-}
-
-.footer__subscribe-bar .bar-plus {
-  flex: 0 0 52px;
+.footer__plus-box {
+  flex: 0 0 58px;
+  background: #b8b8b8;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid rgba(0,0,0,0.1);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  cursor: none;
 }
 
 .footer__unsubscribe {
