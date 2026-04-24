@@ -50,25 +50,62 @@
       <span class="nav__cta-plus">+</span>
     </a>
 
-    <!-- Full-screen menu overlay -->
-    <div class="nav__overlay" id="navOverlay">
-      <div class="nav__overlay-inner">
-        <button class="nav__close" id="navClose">✕ CLOSE</button>
-        <ul class="nav__overlay-links">
-          <li><a href="#capabilities" data-index="01">CAPABILITIES</a></li>
-          <li><a href="#industries" data-index="02">INDUSTRIES</a></li>
-          <li><a href="#casestudies" data-index="03">CASE STUDIES</a></li>
-          <li><a href="#process" data-index="04">PROCESS</a></li>
-          <li><a href="#faq" data-index="05">FAQ</a></li>
-        </ul>
-        <div class="nav__overlay-contact">
-          <p>hello@avishkar.ai</p>
-          <p>Book a Demo →</p>
-        </div>
-      </div>
-    </div>
   </nav>
 
+  <!-- ========== MENU OVERLAY ========== -->
+  <div class="nav__overlay" id="navOverlay">
+    <div class="nav__overlay-container">
+      
+      <!-- Left: Links -->
+      <div class="nav__overlay-col nav__overlay-links-col">
+        <ul class="nav__overlay-links">
+          <li>
+            <div class="nav__link-marker"></div>
+            <a href="#hero">Home</a>
+          </li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#casestudies">Case Studies</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Middle: Contact -->
+      <div class="nav__overlay-col nav__overlay-contact-col">
+        <div class="contact-block">
+          <h4>CONTACT</h4>
+          <p>hello@avishkar.ai</p>
+        </div>
+        <div class="contact-block">
+          <p>Sales: sales@avishkar.ai</p>
+          <p>Support: support@avishkar.ai</p>
+        </div>
+        <div class="contact-block">
+          <p>LinkedIn: @avishkar-ai</p>
+          <p>Twitter: @AvishkarAI</p>
+        </div>
+        <div class="contact-block working-globally">
+          <h4>WORKING GLOBALLY</h4>
+          <p><span class="orange-dot"></span> ACCEPTING ENTERPRISE PROJECTS. JOIN THE WAITLIST.</p>
+          <p><span class="orange-dot"></span> ONLY 3 SPOTS LEFT</p>
+        </div>
+      </div>
+
+      <!-- Right: Media (2 columns) -->
+      <div class="nav__overlay-col nav__overlay-media-col">
+        <div class="nav__media-item">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="About the team">
+          <p>ABOUT AVISHKAR AI</p>
+        </div>
+        <div class="nav__media-item">
+          <img src="https://images.unsplash.com/photo-1618477247222-ac60c64777e4?auto=format&fit=crop&q=80" alt="Featured project">
+          <p>FEATURED CASE STUDY</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero__content">

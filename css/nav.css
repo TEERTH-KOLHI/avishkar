@@ -44,6 +44,9 @@
 
 /* Menu button */
 .nav__menu-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -76,12 +79,8 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.nav__menu-btn.active .nav__hamburger span:first-child {
-  transform: translateY(3.5px) rotate(45deg);
-}
-
-.nav__menu-btn.active .nav__hamburger span:last-child {
-  transform: translateY(-3.5px) rotate(-45deg);
+body.menu-open .nav__hamburger {
+  display: none;
 }
 
 /* CTA button */
@@ -129,17 +128,17 @@
 /* Full-screen overlay */
 .nav__overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  top: calc(20px + var(--nav-h) + 15px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #333333;
   z-index: 999;
   display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
 }
 
 .nav__overlay.open {
@@ -147,75 +146,135 @@
   visibility: visible;
 }
 
-.nav__overlay-inner {
-  text-align: center;
+.nav__overlay-container {
   width: 100%;
-  padding: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 2fr;
+  gap: 60px;
 }
 
-.nav__close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  cursor: none;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+@media (max-width: 1024px) {
+  .nav__overlay-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav__overlay-media-col {
+    display: none !important;
+  }
 }
 
-.nav__close:hover {
-  opacity: 1;
+@media (max-width: 768px) {
+  .nav__overlay-container {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* Links Column */
 .nav__overlay-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 60px;
+  gap: 16px;
+}
+
+.nav__overlay-links li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__link-marker {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
+
+/* The first item is active/highlighted */
+.nav__overlay-links li:first-child .nav__link-marker {
+  background: var(--orange);
 }
 
 .nav__overlay-links li a {
   font-family: var(--font-sans);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(2rem, 5vw, 4.5rem);
   font-weight: 500;
   color: var(--white);
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  line-height: 1.1;
   text-decoration: none;
   cursor: none;
-  display: inline-block;
-  transition: color 0.3s, transform 0.3s;
-  position: relative;
+  transition: color 0.3s;
 }
 
-.nav__overlay-links li a::before {
-  content: attr(data-index);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--orange);
-  position: absolute;
-  left: -2em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
+.nav__overlay-links li:first-child a,
 .nav__overlay-links li a:hover {
   color: var(--orange);
-  transform: translateX(10px);
 }
 
-.nav__overlay-contact {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--gray-mid);
-  letter-spacing: 0.08em;
+/* Contact Column */
+.nav__overlay-contact-col {
   display: flex;
+  flex-direction: column;
   gap: 40px;
-  justify-content: center;
+  padding-top: 10px;
+}
+
+.contact-block h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.contact-block p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.working-globally p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.orange-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+}
+
+/* Media Column */
+.nav__overlay-media-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.nav__media-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav__media-item img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+.nav__media-item p {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

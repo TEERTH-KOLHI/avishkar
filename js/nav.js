@@ -21,18 +21,25 @@
   onScroll();
 
   // ---- Menu open/close ----
+  const menuTextSpan = menuBtn ? menuBtn.querySelector('span') : null;
+  const ctaTextSpan = document.querySelector('.nav__cta-text');
+
   function openMenu() {
     navOverlay.classList.add('open');
     menuBtn.classList.add('active');
+    document.body.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
 
-    // Stagger in links
-    const items = navOverlay.querySelectorAll('.nav__overlay-links li');
+    if (menuTextSpan) menuTextSpan.innerText = 'CLOSE ✕';
+    if (ctaTextSpan) ctaTextSpan.innerText = "LET'S WORK TOGETHER";
+
+    // Stagger in links, contact, and media items
+    const items = navOverlay.querySelectorAll('.nav__overlay-links li, .nav__overlay-contact-col > *, .nav__media-item');
     items.forEach((el, i) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       setTimeout(() => {
-        el.style.transition = `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s`;
+        el.style.transition = `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.05}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.05}s`;
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
       }, 50);
@@ -42,11 +49,19 @@
   function closeMenu() {
     navOverlay.classList.remove('open');
     menuBtn.classList.remove('active');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
+
+    if (menuTextSpan) menuTextSpan.innerText = 'MENU';
+    if (ctaTextSpan) ctaTextSpan.innerText = 'BOOK A DEMO';
   }
 
-  if (menuBtn) menuBtn.addEventListener('click', openMenu);
-  if (navClose) navClose.addEventListener('click', closeMenu);
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      if (navOverlay.classList.contains('open')) closeMenu();
+      else openMenu();
+    });
+  }
   overlayLinks.forEach(link => link.addEventListener('click', closeMenu));
 
   // Close on Escape
