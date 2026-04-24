@@ -1,11 +1,13 @@
 /* ===========================
-   ANIMATIONS.JS — Scroll-Reveal & Hero Text
+   ANIMATIONS.JS — Smooth Scroll & GSAP Reveals
    =========================== */
 
 (function () {
-  // ---- Lenis Smooth Scroll ----
+  let lenis;
+
+  // ---- Lenis Smooth Scroll + GSAP ScrollTrigger Integration ----
   if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
+    lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
@@ -16,11 +18,25 @@
       touchMultiplier: 2,
     });
 
-    function raf(time) {
-      lenis.raf(time);
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Synchronize Lenis with GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      // Fallback RAF if GSAP isn't loaded
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
     // Ensure links with hashes use Lenis to scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -44,30 +60,61 @@
 
   // Trigger hero headline after short delay
   setTimeout(() => {
-    document.querySelectorAll('.hero__line-inner').forEach(span => {
-      span.classList.add('in');
+    document.querySelectorAll('.hero__line-inner').forEach((span, index) => {
+      // Add 'in' class with staggered delay or use GSAP
+      if (typeof gsap !== 'undefined') {
+        gsap.to(span, {
+          y: '0%',
+          opacity: 1,
+          duration: 1,
+          ease: 'power4.out',
+          delay: index * 0.15
+        });
+      } else {
+        setTimeout(() => { span.classList.add('in'); }, index * 150);
+      }
     });
   }, 300);
 
-  // ---- Intersection Observer for [data-reveal] ----
-  const revealEls = document.querySelectorAll('[data-reveal]');
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
+  // ---- GSAP Scroll-Triggered Reveals for [data-reveal] elements ----
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    
+    revealEls.forEach(el => {
+      gsap.fromTo(el, 
+        { 
+          y: 40, 
+          opacity: 0 
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%', // Trigger when the top of element hits 85% down viewport
+            toggleActions: 'play none none reverse' // Re-animates slightly if scrolling back up
+          }
         }
-      });
-    },
-    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
-  );
-
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  // ---- Marquee / scrolling text if needed ----
-  // (Placeholder for future horizontal scroll marquees)
+      );
+    });
+  } else {
+    // Fallback to Intersection Observer if GSAP is not available
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
 
   // ---- Parallax subtle shift on scroll ----
   function parallax() {
