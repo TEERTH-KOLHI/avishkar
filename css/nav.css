@@ -30,20 +30,44 @@ body.menu-open .nav {
 
 /* Logo */
 .nav__logo {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  border: 2px solid var(--white);
-  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid var(--white); /* Restored border */
+  padding: 4px 12px; /* Restored padding */
   cursor: none;
-  transition: background 0.3s, color 0.3s;
+  transition: opacity 0.3s;
 }
 
-.nav__logo:hover {
-  background: var(--white);
-  color: var(--black);
+.nav__logo img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.nav__logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.nav__logo-text span {
+  transition: color 0.3s;
+}
+
+.nav__logo:hover .part-avish {
+  color: var(--white);
+}
+
+.nav__logo:hover .part-kar {
+  color: #00a8ff; /* Vibrant Blue for AI */
+}
+
+.nav__logo:hover .part-ai {
+  color: var(--orange); /* Same as BOOK A DEMO button */
 }
 
 /* Menu button */
