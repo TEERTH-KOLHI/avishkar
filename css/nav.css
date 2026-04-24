@@ -4,17 +4,18 @@
 
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
   z-index: 1000;
-  transition: background 0.4s ease, border-color 0.4s ease;
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
   border-bottom: 1px solid transparent;
+  border-radius: 12px;
 }
 
 .nav.scrolled {
@@ -87,8 +88,8 @@
 /* CTA button */
 .nav__cta {
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: stretch; /* ensure both boxes stretch to same height */
+  gap: 2px; /* visible gap between text and plus */
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
@@ -96,40 +97,33 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: none;
+  transition: opacity 0.3s, transform 0.3s;
+  /* Remove background/padding from container so the gap shows through */
+  background: transparent;
+  padding: 0;
 }
 
-.nav__cta span:first-child,
-.nav__cta>span:not(.nav__cta-plus) {
+.nav__cta-text {
+  display: flex;
+  align-items: center;
   background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s;
+  color: var(--black);
+  padding: 8px 16px; /* smaller height */
 }
 
 .nav__cta-plus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
   background: var(--orange);
-  color: var(--white);
-  font-size: 1.2rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background 0.3s;
-  margin-left: 1px;
-}
-
-.nav__cta {
-  background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s, transform 0.3s;
-  gap: 1px;
+  color: var(--black);
+  padding: 0 12px;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .nav__cta:hover {
-  background: var(--orange-hover);
+  opacity: 0.9;
   transform: translateY(-2px);
 }
 
