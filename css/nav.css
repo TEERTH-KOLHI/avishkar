@@ -129,9 +129,9 @@ body.menu-open .nav__hamburger {
 .nav__overlay {
   position: fixed;
   top: calc(20px + var(--nav-h) + 15px);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 20px; /* Also added bottom gap to make it a floating container */
   background: #333333;
   z-index: 999;
   display: flex;
