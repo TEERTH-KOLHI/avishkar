@@ -97,8 +97,9 @@ body.menu-open .nav {
 /* CTA button */
 .nav__cta {
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: stretch;
+  background: var(--orange);
+  color: var(--black);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
@@ -106,40 +107,31 @@ body.menu-open .nav {
   text-transform: uppercase;
   text-decoration: none;
   cursor: none;
+  transition: opacity 0.3s;
 }
 
-.nav__cta span:first-child,
-.nav__cta>span:not(.nav__cta-plus) {
+.nav__cta-text {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
   background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s;
+  color: var(--black);
 }
 
 .nav__cta-plus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  padding: 0 12px;
   background: var(--orange);
-  color: var(--white);
-  font-size: 1.2rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background 0.3s;
-  margin-left: 1px;
-}
-
-.nav__cta {
-  background: var(--orange);
-  color: var(--white);
-  padding: 12px 18px;
-  transition: background 0.3s, transform 0.3s;
-  gap: 1px;
+  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 400;
+  border-left: 1px solid #1a1a1a;
 }
 
 .nav__cta:hover {
-  background: var(--orange-hover);
+  opacity: 0.9;
   transform: translateY(-2px);
 }
 
