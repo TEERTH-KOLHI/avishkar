@@ -62,7 +62,7 @@
 
     // Center of the canvas (offset to the right as per hero design)
     const cx = w * 0.5;
-    const cy = h * 0.35; // Moved further up from 0.42
+    const cy = h * 0.45; // Moved down from 0.35
 
     // Sort points by Z (depth) for better layering, though ASCII is flat
     // We'll use alpha for depth
