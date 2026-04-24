@@ -73,8 +73,8 @@
 
 .faq__icon {
   font-family: var(--font-sans);
-  font-size: 1.2rem; /* Scaled down with padding */
-  font-weight: 200;
+  font-size: 1.6rem; /* Increased from 1.2rem */
+  font-weight: 300; /* Slightly bolder */
   color: var(--gray-mid);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
 }
@@ -91,7 +91,11 @@
 .faq__answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq__answer.open {
+  max-height: 300px; /* Expand height when open */
 }
 
 .faq__answer p {
