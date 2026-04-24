@@ -205,27 +205,29 @@ body.menu-open .nav__hamburger {
 
 /* Links Column */
 .nav__overlay-links {
+  position: relative; /* Anchor for floating marker */
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
+.nav__floating-marker {
+  position: absolute;
+  left: -32px; /* Moved right slightly from -44px */
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--orange);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+  pointer-events: none;
+  z-index: 5;
+}
+
 .nav__overlay-links li {
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-
-.nav__link-marker {
-  width: 24px;
-  height: 24px;
-  background: transparent;
-}
-
-/* The first item is active/highlighted */
-.nav__overlay-links li:first-child .nav__link-marker {
-  background: var(--orange);
+  position: relative;
 }
 
 .nav__overlay-links li a {
@@ -239,8 +241,14 @@ body.menu-open .nav__hamburger {
   transition: color 0.3s;
 }
 
-.nav__overlay-links li:first-child a,
-.nav__overlay-links li a:hover {
+/* Hover effect for both marker and text */
+.nav__overlay-links li:hover .nav__link-marker,
+.nav__overlay-links li:first-child .nav__link-marker {
+  background: var(--orange); /* Red-Orange theme color */
+}
+
+.nav__overlay-links li:hover a,
+.nav__overlay-links li:first-child a {
   color: var(--orange);
 }
 

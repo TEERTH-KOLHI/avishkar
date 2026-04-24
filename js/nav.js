@@ -125,6 +125,35 @@
     cursor.style.transform = 'translate(-50%,-50%) scale(1)';
   });
 
+  // ---- Floating Marker Logic ----
+  const floatingMarker = document.getElementById('navFloatingMarker');
+  const navLinksList = document.querySelector('.nav__overlay-links');
+  const navItems = navLinksList ? navLinksList.querySelectorAll('li') : [];
+
+  function moveMarker(el) {
+    if (!floatingMarker || !el) return;
+    const itemRect = el.getBoundingClientRect();
+    const listRect = navLinksList.getBoundingClientRect();
+    const top = el.offsetTop + (el.offsetHeight / 2) - (floatingMarker.offsetHeight / 2);
+    floatingMarker.style.transform = `translateY(${top}px)`;
+    floatingMarker.style.opacity = '1';
+  }
+
+  navItems.forEach(item => {
+    item.addEventListener('mouseenter', () => moveMarker(item));
+  });
+
+  // Reset to first item when menu opens
+  const originalOpenMenu = openMenu;
+  openMenu = function() {
+    originalOpenMenu();
+    if (navItems.length > 0) {
+      setTimeout(() => moveMarker(navItems[0]), 100);
+    }
+  };
+
+  // Re-expose openMenu if needed (though it's in the same scope)
+
   // Hide default cursor visibility when mouse inside window
   document.addEventListener('mouseleave', () => {
     cursor.style.opacity = '0';
