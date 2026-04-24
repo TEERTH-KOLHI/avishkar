@@ -157,16 +157,17 @@
 .footer__right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Right alignment */
+  align-items: flex-start; /* Keep text left-aligned */
   gap: 40px;
-  text-align: right;
-  padding-right: 140px; /* Internal offset to push content 'little left' */
+  text-align: left;
+  margin-left: auto; /* Push the whole block to the right edge of the grid cell */
+  margin-right: 20px; /* Precise distance from the far right edge */
 }
 
 .footer__emails {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 8px;
 }
 
@@ -181,7 +182,7 @@
 .footer__legal {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -194,7 +195,7 @@
 .footer__shortcuts {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 12px;
 }
 
