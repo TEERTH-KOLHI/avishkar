@@ -1,0 +1,130 @@
+/* ===========================
+   CONTACT.CSS — Call to Action
+   =========================== */
+
+.contact-pre {
+  background: var(--off-white);
+  padding: 120px 40px 120px 20px; /* Aligned with 20px left, 40px right */
+}
+
+.contact-pre__container {
+  max-width: 1400px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Left Side */
+.contact-pre__sidebar h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 60px;
+}
+
+.contact-pre__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.contact-pre__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Side */
+.contact-pre__content {
+  padding-top: 20px;
+}
+
+.contact-pre__subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 80px;
+  max-width: 500px;
+  letter-spacing: -0.02em;
+}
+
+.contact-pre__info {
+  margin-bottom: 60px;
+}
+
+.contact-pre__email {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-pre__tagline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+}
+
+.contact-pre__btn-wrapper {
+  margin-bottom: 100px;
+}
+
+.contact-pre__btn-wrapper p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+.contact-pre__btn {
+  display: inline-flex;
+  background: var(--black);
+  color: var(--white);
+  padding: 0;
+  align-items: stretch;
+  gap: 2px;
+}
+
+.contact-pre__btn .btn__text {
+  padding: 12px 24px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.contact-pre__btn .btn__plus {
+  background: var(--black);
+  color: var(--white);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-pre__footer-note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .contact-pre__container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
