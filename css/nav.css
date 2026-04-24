@@ -259,7 +259,7 @@ body.menu-open .nav__hamburger {
 .nav__overlay-contact-col {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px; /* Reduced from 40px for a tighter layout */
   padding-top: 10px;
 }
 
@@ -309,7 +309,7 @@ body.menu-open .nav__hamburger {
 
 .nav__media-item img {
   width: 100%;
-  aspect-ratio: 9/16;
+  aspect-ratio: 1/1.6; /* Increased slightly more */
   object-fit: cover;
 }
 
