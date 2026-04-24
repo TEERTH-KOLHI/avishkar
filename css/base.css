@@ -116,6 +116,37 @@ body:hover .cursor {
   transform: translateY(-2px);
 }
 
+.btn--split {
+  padding: 0;
+  gap: 2px;
+  background: transparent;
+  align-items: stretch;
+}
+
+.btn--split .btn__text {
+  display: flex;
+  align-items: center;
+  background: var(--orange);
+  color: var(--black);
+  padding: 8px 16px;
+}
+
+.btn--split .btn__plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange);
+  color: var(--black);
+  padding: 0 12px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.btn--split:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
 .btn--ghost {
   background: transparent;
   color: var(--white);
