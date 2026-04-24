@@ -116,20 +116,20 @@
 
 .brand-logo--script {
   font-family: Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Increased from 1.5rem */
   font-style: italic;
   font-weight: 400;
 }
 
 .brand-logo--bold {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.25rem; /* Increased from 1.0rem */
   letter-spacing: 0.05em;
 }
 
 .brand-logo--mono {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.1rem; /* Increased from 0.85rem */
   letter-spacing: 0.08em;
 }
 
