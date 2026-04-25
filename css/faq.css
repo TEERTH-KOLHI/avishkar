@@ -53,7 +53,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  cursor: none;
+  
   transition: opacity 0.3s;
 }
 

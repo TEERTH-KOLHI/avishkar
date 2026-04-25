@@ -40,7 +40,6 @@ body {
   color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* ---- Custom cursor ---- */
@@ -87,7 +86,6 @@ body:hover .cursor {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  cursor: none;
   transition: var(--transition);
   position: relative;
   overflow: hidden;

@@ -53,7 +53,7 @@
   height: 65px;
   overflow: hidden;
   border: 2px solid transparent;
-  cursor: none;
+  
   transition: border-color 0.3s, transform 0.3s;
   position: relative;
   flex-shrink: 0;
